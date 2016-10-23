@@ -43,7 +43,7 @@ function getParam(name) {
 
 	    // Images (in the format of 'url': 'alignment').
 	    images: {
-		'images/choppa.jpeg': 'center'
+		'http://res.cloudinary.com/dvqentr9g/image/upload/v1477215803/choppa_bu4kcg.jpg': 'center'
 		
 	    },
 
