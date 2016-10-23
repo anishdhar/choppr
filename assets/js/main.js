@@ -50,14 +50,14 @@ function ValidateEmail(mail)
 	// Settings.
 	var settings = {
 
-	    // Images (in the format of 'url': 'alignment').
+	    // Images
 	    images: {
-		'images/choppa.jpeg': 'center'
+		'http://res.cloudinary.com/dvqentr9g/image/upload/v1477216537/choppa-min_ckrfce.jpg': 'center'
 		
 	    },
 
 	    // Delay.
-	    delay: 6000
+	    delay: 0
 
 	};
 
