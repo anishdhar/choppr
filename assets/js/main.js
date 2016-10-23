@@ -41,14 +41,14 @@ function getParam(name) {
 	// Settings.
 	var settings = {
 
-	    // Images (in the format of 'url': 'alignment').
+	    // Images
 	    images: {
-		'http://res.cloudinary.com/dvqentr9g/image/upload/v1477215803/choppa_bu4kcg.jpg': 'center'
+		'http://res.cloudinary.com/dvqentr9g/image/upload/v1477216537/choppa-min_ckrfce.jpg': 'center'
 		
 	    },
 
 	    // Delay.
-	    delay: 6000
+	    delay: 0
 
 	};
 
