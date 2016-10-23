@@ -145,6 +145,10 @@ function getParam(name) {
 	// Note: If you're *not* using AJAX, get rid of this event listener.
 	$form.addEventListener('submit', function(event) {
 
+	    if(!$('#email').value || $('#email').value.length == 0) {
+		return;
+	    }
+	    
 	    event.stopPropagation();
 	    event.preventDefault();
 
@@ -158,7 +162,6 @@ function getParam(name) {
 	    // Note: Doesn't actually do anything yet (other than report back with a "thank you"),
 	    // but there's enough here to piece together a working AJAX submission call that does.
 	    window.setTimeout(function() {
-
 		// Reset form.
 		$form.reset();
 
@@ -172,7 +175,7 @@ function getParam(name) {
 				ref   : getParam('ref') ? getParam('ref') : undefined
 			       },
 			success : function(resp) {
-			    window.location.href = resp.redirect;
+			    //window.location.href = resp.redirect;
 			},
 
 			error : function(resp) {
@@ -183,9 +186,7 @@ function getParam(name) {
 		//
 
 	    }, 750);
-
 	});
-
     })();
 
 })();
