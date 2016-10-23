@@ -25,7 +25,6 @@ function getParam(name) {
 
     // Vars.
     var	$body = document.querySelector('body');
-    var ref = 
 
     // Disable animations/transitions until everything's loaded.
     $body.classList.add('is-loading');
@@ -159,8 +158,6 @@ function getParam(name) {
 	    $submit.disabled = true;
 
 	    // Process form.
-	    // Note: Doesn't actually do anything yet (other than report back with a "thank you"),
-	    // but there's enough here to piece together a working AJAX submission call that does.
 	    window.setTimeout(function() {
 		// Reset form.
 		$form.reset();
@@ -170,12 +167,12 @@ function getParam(name) {
 
 		// Make request
 		$.ajax({type : "POST",
-		        url  : "choppr.io/submit",
+		        url  : "http://yellowstone-1.api.topfive.rocks/choppr/create/",
 		        data : {email : $('#email').value,
-				ref   : getParam('ref') ? getParam('ref') : undefined
+				code   : getParam('ref') ? getParam('ref') : null
 			       },
 			success : function(resp) {
-			    //window.location.href = resp.redirect;
+			    window.location.href = resp.redirect;
 			},
 
 			error : function(resp) {
