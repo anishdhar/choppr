@@ -143,13 +143,14 @@ function getParam(name) {
 	// Events.
 	// Note: If you're *not* using AJAX, get rid of this event listener.
 	$form.addEventListener('submit', function(event) {
-
-	    if(!$('#email').value || $('#email').value.length == 0) {
-		return;
-	    }
-	    
 	    event.stopPropagation();
 	    event.preventDefault();
+
+
+	    if($('#email')[0].value.length == 0) {
+		return false;
+	    }
+
 
 	    // Hide message.
 	    $message._hide();
@@ -157,32 +158,33 @@ function getParam(name) {
 	    // Disable submit.
 	    $submit.disabled = true;
 
-	    // Process form.
-	    window.setTimeout(function() {
-		// Reset form.
-		$form.reset();
+	    // Reset form.
+//	    $form.reset();
 
-		// Enable submit.
-		$submit.disabled = false;
+	    // Enable submit.
+	    $submit.disabled = false;
 
-		// Make request
-		$.ajax({type : "POST",
-		        url  : "http://yellowstone-1.api.topfive.rocks/choppr/create/",
-		        data : {email : $('#email').value,
-				code   : getParam('ref') ? getParam('ref') : null
-			       },
-			success : function(resp) {
-			    window.location.href = resp.redirect;
-			},
+	    // Make request
+	    $.ajax({type : "POST",
+		    url  : "http://yellowstone-1.api.topfive.rocks/choppr/create/",
+		    data : {email : $('#email')[0].value,
+			    code   : getParam('ref') ? getParam('ref') : null
+			   },
+		    success : function(resp) {
+			window.location.href = "share.html?code="+resp.code;
+		    },
 
-			error : function(resp) {
-			    $message._show('failure', 'Something went wrong. Please try again.');
+		    error : function(resp) {
+			if(resp.status == 400) {
+			    $message._show('failure', 'Sorry! This email has already been used.');			    
+			} else {
+			    $message._show('failure', 'Sorry! Something went wrong. Please try again.');
 			}
-		       });
-		
-		//
 
-	    }, 750);
+		    }
+		   });
+
+	    return false;
 	});
     })();
 
