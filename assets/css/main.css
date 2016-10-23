@@ -349,6 +349,12 @@
 			text-decoration: none;
 		}
 
+		a#hello:hover {
+			color: #009ACD !important;
+			text-decoration: none;
+			border-bottom-color: #009ACD !important;
+		}
+
 	strong, b {
 		color: #fff;
 		font-weight: 700;
