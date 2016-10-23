@@ -8,6 +8,15 @@ function getParam(name) {
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
+function ValidateEmail(mail)   
+{  
+ if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))  
+  {  
+    return (true)  
+  }  
+    return (false)  
+} 
+
 (function() {
 
     "use strict";
@@ -148,7 +157,13 @@ function getParam(name) {
 
 
 	    if($('#email')[0].value.length == 0) {
-		return false;
+			return false;
+	    }
+
+	    if(ValidateEmail($('#email')[0].value) == false) {
+	    	console.log("fsajkdsjflkjs")
+	    	$message._show('failure', 'Sorry! Please enter a valid email address.');
+	    	return false;
 	    }
 
 
