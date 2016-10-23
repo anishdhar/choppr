@@ -345,7 +345,7 @@
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: #1cb495 !important;
+			color: white !important;
 			text-decoration: none;
 		}
 
@@ -365,7 +365,7 @@
 	h1, h2, h3, h4, h5, h6 {
 		color: #fff;
 		font-weight: 700;
-		line-height: 1em;
+		line-height: 2em;
 		margin: 0 0 1em 0;
 	}
 
@@ -391,7 +391,7 @@ letter-spacing: 0;
 	}
 
 	h3 {
-		font-size: 1.35em;
+		font-size: 2em;
 		line-height: 1.5em;
 	}
 
@@ -483,7 +483,7 @@ letter-spacing: 0;
 	}
 
 	header h3 + p {
-		font-size: 1.1em;
+		font-size: 2em;
 		margin-top: -0.8em;
 		line-height: 1.5em;
 	}
@@ -1163,6 +1163,10 @@ letter-spacing: 0;
 			#footer {
 				bottom: 2em;
 				left: 2em;
+			}
+
+			h2, h3 {
+				font-size:1.25em !important;
 			}
 
 		}

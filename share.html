@@ -18,14 +18,42 @@
                 <h2 style="text-align:center;font-weight:100;margin-bottom:0.1em">There are <b style="color:#009ACD">100,000</b> people ahead of you!</h2>
             </div>
             <div id="share">
-                <h3 style="text-align:center;font-weight:200;font-size:2em;">Board first by referring your friends.</h3>
+                <h3 style="text-align:center;font-weight:200;">Board first by referring your friends.</h3>
             </div>
-<!--             <button style="margin-left:45%"class="my_popup_close">Close</button>
- -->        </div>
+            <div id="share_buttons" style="text-align:center">
+                     <a class="fb-share button" style="font-weight:400;letter-spacing:0.03em;font-size:1.15em;margin-left:1em" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.choppr.io%2F%3Fref%3DREPLACEME&amp;src=sdkpreparse" target="_blank"><i class="fa fa-facebook-square"></i>&nbsp;&nbsp;Share</a>
+                     <a class="tw-share button" style="font-weight:400;letter-spacing:0.03em;font-size:1.15em;margin-left:1em" href="https://twitter.com/intent/tweet?hashtags=choppr&original_referer=https%3A%2F%2Fdev.twitter.com%2Fweb%2Ftweet-button&ref_src=twsrc%5Etfw&related=twitterapi%2Ctwitter&text=Hello%20world&tw_p=tweetbutton&url=https%3A%2F%2Fexample.com%2Ffoo&via=twitterdev" target="_blank"><i class="fa fa-twitter"></i>&nbsp;&nbsp;Tweet</a>
+                     <a class="button" style="font-weight:400;letter-spacing:0.03em;font-size:1.15em;margin-left:1em" href="mailto:?Subject=Hello%20again" target="_top"><i class="fa fa-envelope"></i>&nbsp;&nbsp;Email</a>
+                     <a class="ln-share button" style="font-weight:400;letter-spacing:0.03em;font-size:1.15em;margin-left:1em" href="https://www.linkedin.com/cws/share?url=choppr.io%2F%3Fref%3DREPLACEME"><i class="fa fa-linkedin-square" target="_blank"></i>&nbsp;&nbsp;Share</a>
+            </div>
+            <div id="share_link" style="margin-top:1.5em;font-size:1em;font-weight:200">
+                <p style="text-align:center;margin-bottom:0.5em">Or share the referral link below:</p>
+                <p style="text-align:center;font-size:1.25em"><b style="color:#009ACD">http://choppr.io/?ref=AAAAAA</b></p>
+            </div>
+
             <script src="assets/js/jquery-3.1.1.min.js"></script>
             <script src="assets/js/main.js"></script>
             <script src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
             <script src="https://cdn.rawgit.com/vast-engineering/jquery-popup-overlay/1.7.13/jquery.popupoverlay.js"></script>
+            <script>
+                $(document).ready(function() {
+                    $('.fb-share').click(function(e) {
+                        e.preventDefault();
+                        window.open($(this).attr('href'), 'fbShareWindow', 'height=450, width=550, top=' + ($(window).height() / 2 - 275) + ', left=' + ($(window).width() / 2 - 225) + ', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
+                        return false;
+                    });
+                    $('.ln-share').click(function(e) {
+                        e.preventDefault();
+                        window.open($(this).attr('href'), 'fbShareWindow', 'height=450, width=550, top=' + ($(window).height() / 2 - 275) + ', left=' + ($(window).width() / 2 - 225) + ', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
+                        return false;
+                    });
+                    $('.tw-share').click(function(e) {
+                        e.preventDefault();
+                        window.open($(this).attr('href'), 'fbShareWindow', 'height=450, width=550, top=' + ($(window).height() / 2 - 275) + ', left=' + ($(window).width() / 2 - 225) + ', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
+                        return false;
+                    });
+                });
+            </script>
 
     </body>
 </html>
