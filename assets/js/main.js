@@ -172,11 +172,11 @@ function getParam(name) {
 				ref   : getParam('ref') ? getParam('ref') : undefined
 			       },
 			success : function(resp) {
-			    $message._show('success', 'Thank you!');			    
+			    window.location.href = resp.redirect;
 			},
 
 			error : function(resp) {
-			    $message._show('failure', 'Something went wrong. Please try again.');			    
+			    $message._show('failure', 'Something went wrong. Please try again.');
 			}
 		       });
 		
